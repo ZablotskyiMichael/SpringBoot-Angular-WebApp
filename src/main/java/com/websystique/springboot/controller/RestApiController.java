@@ -22,7 +22,7 @@ import com.websystique.springboot.service.UserService;
 import com.websystique.springboot.util.CustomErrorType;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/admin")
 public class RestApiController {
 
 	public static final Logger logger = LoggerFactory.getLogger(RestApiController.class);
@@ -127,6 +127,7 @@ public class RestApiController {
 
 		currentUser.setName(user.getName());
 		currentUser.setPassword(user.getPassword());
+		currentUser.setEnabled(user.getEnabled());
 		currentUser.setRole(user.getRole());
 
 		userService.updateUser(currentUser);

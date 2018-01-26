@@ -7,7 +7,9 @@
         <link href="css/app.css" rel="stylesheet"/>
     </head>
     <body>
-
+    <a ui-sref="home" ui-sref-active="active">Administrator</a>
+    <a ui-sref="welcome" ui-sref-active="active">welcome</a>
+    <a ui-sref="user" ui-sref-active="active">User</a>
         <div ui-view></div>
         <script src="js/lib/angular.min.js" ></script>
         <script src="js/lib/angular-ui-router.min.js" ></script>

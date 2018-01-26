@@ -13,10 +13,32 @@ public class AppController {
 		modal.addAttribute("title","CRUD Example");
 		return "index";
 	}
+	@RequestMapping("/login")
+	String login (ModelMap modal) {
+		modal.addAttribute("title","Login");
+		return "login";
+	}
+	@RequestMapping("/registration")
+	String test (ModelMap modal) {
+		modal.addAttribute("title","Registr");
+		return "registr";
+	}
+
+	@RequestMapping("/userpage")
+	String admin (ModelMap modal) {
+		modal.addAttribute("title","UserPage");
+		return "user";
+	}
 
 	@RequestMapping("/partials/{page}")
 	String partialHandler(@PathVariable("page") final String page) {
 		return page;
 	}
+
+	@RequestMapping("/administrator/{page}")
+	String adminHandler(@PathVariable("page") final String page) {
+		return page;
+	}
+
 
 }

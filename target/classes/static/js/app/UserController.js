@@ -153,9 +153,7 @@ angular.module('crudApp').controller('UserController',
                 .then(
                     function(){
                         console.log('Role '+id + ' removed successfully');
-                        self.successMessage='Role removed successfully';
-                        self.errorMessage='';
-                        self.RoleDone=true;
+                        
                     },
                     function(errResponse){
                         console.error('Error while removing role '+id +', Error :'+errResponse.data);

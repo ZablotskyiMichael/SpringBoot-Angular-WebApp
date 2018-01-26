@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class Role {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
 
     @Column(name = "ROLE_ID")
     private Long role_Id;

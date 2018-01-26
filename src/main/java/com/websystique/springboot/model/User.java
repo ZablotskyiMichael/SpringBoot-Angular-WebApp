@@ -17,6 +17,17 @@ public class User implements Serializable{
 	@Column(name="NAME", nullable=false)
 	private String name;
 
+	@Column(name="ENABLED")
+	private int enabled;
+
+	public int getEnabled() {
+		return enabled;
+	}
+
+	public void setEnabled(int enabled) {
+		this.enabled = enabled;
+	}
+
 	@Column(name="PASSWORD", nullable=false)
 	private Integer password;
 

@@ -6,6 +6,7 @@ angular.module('crudApp').factory('UserService',
 
             var factory = {
                 loadAllUsers: loadAllUsers,
+                loadAllUsersUserAccess: loadAllUsersUserAccess,
                 loadAllRoles:loadAllRoles,
                 getAllUsers: getAllUsers,
                 getAllRoles:getAllRoles,
@@ -192,6 +193,24 @@ angular.module('crudApp').factory('UserService',
                     );
                 return deferred.promise;
             }
+            function loadAllUsersUserAccess() {
+                console.log('Fetching all users');
+                var deferred = $q.defer();
+                $http.get(urls.USER_SERVICE_API_EASY_ACCESS)
+                    .then(
+                        function (response) {
+                            console.log('Fetched successfully all users');
+                            $localStorage.users = response.data;
+                            deferred.resolve(response);
+                        },
+                        function (errResponse) {
+                            console.error('Error while loading users');
+                            deferred.reject(errResponse);
+                        }
+                    );
+                return deferred.promise;
+            }
 
         }
+
     ]);
